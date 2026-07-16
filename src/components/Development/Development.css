@@ -1,0 +1,121 @@
+.development {
+  background-color: #0a0e17;
+  padding: 100px 40px;
+}
+
+.development__inner {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.development__title {
+  font-size: 56px;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0 0 80px 0;
+  text-align: center;
+}
+
+.development__dot {
+  color: #a855f7;
+}
+
+.development__list {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+}
+
+.development__list::before {
+  content: "";
+  position: absolute;
+  top: 10px;
+  bottom: 10px;
+  left: 69px;
+  width: 2px;
+  background: linear-gradient(
+    to bottom,
+    rgba(168, 85, 247, 0.6),
+    rgba(168, 85, 247, 0.1)
+  );
+}
+
+.development__item {
+  position: relative;
+  display: grid;
+  grid-template-columns: 140px 1fr;
+  gap: 24px;
+  text-align: left;
+}
+
+.development__marker {
+  position: absolute;
+  left: 61px;
+  top: 4px;
+  z-index: 1;
+}
+
+.development__marker-dot {
+  display: block;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background-color: #0a0e17;
+  border: 2px solid #a855f7;
+  box-shadow: 0 0 12px rgba(168, 85, 247, 0.7);
+}
+
+.development__stack {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: flex-start;
+  padding-top: 40px;
+}
+
+.development__tag {
+  padding: 6px 14px;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+  color: #c084fc;
+  background: rgba(168, 85, 247, 0.1);
+  border: 1px solid rgba(168, 85, 247, 0.4);
+  border-radius: 999px;
+  backdrop-filter: blur(6px);
+  white-space: nowrap;
+}
+
+.development__item-body {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  text-align: left;
+}
+
+.development__item-title {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 32px;
+  font-weight: 700;
+  color: #c084fc;
+  margin: 0;
+  text-align: left;
+}
+
+.development__arrow {
+  font-size: 24px;
+  color: #a855f7;
+}
+
+.development__item-description {
+  font-size: 18px;
+  line-height: 1.7;
+  color: #cbd5e1;
+  max-width: 900px;
+  margin: 0;
+  text-align: left;
+}

@@ -1,0 +1,87 @@
+.contacts {
+   background-color: #0a0e17;
+  padding: 120px 0;
+}
+
+.contacts-container {
+  width: min(1100px, 90%);
+  margin: 0 auto;
+}
+
+.contacts-title {
+  color: #fff;
+  font-size: 4rem;
+  font-weight: 700;
+  text-align: center;
+}
+
+.contacts-title span {
+  color: #a855f7;
+}
+
+.contacts-description {
+  margin-top: 18px;
+  margin-bottom: 60px;
+  text-align: center;
+  color: #a7a7a7;
+  font-size: 1rem;
+}
+
+.contacts-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.contact-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 24px 28px;
+
+  border: 1px solid #2d323c;
+  border-radius: 18px;
+
+  text-decoration: none;
+  color: white;
+
+  transition: all 0.3s ease;
+}
+
+.contact-card:hover {
+  transform: translateY(-5px);
+  color: #c084fc;
+}
+
+.contact-info {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.contact-icon {
+  width: 28px;
+  height: 28px;
+  object-fit: contain;
+}
+
+.contact-info span {
+  font-size: 1.15rem;
+  font-weight: 500;
+}
+
+.contact-arrow {
+  font-size: 1.5rem;
+  color: #c084fc;
+}
+
+@media (max-width: 768px) {
+  .contacts-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .contacts-title {
+    font-size: 3rem;
+  }
+}

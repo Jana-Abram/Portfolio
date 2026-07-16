@@ -1,0 +1,106 @@
+.projects {
+  background-color: #0a0e17;
+  padding: 100px 40px;
+}
+
+.projects__inner {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.projects__title {
+  font-size: 56px;
+  font-weight: 700;
+  color: #ffffff;
+  text-align: center;
+  margin: 0 0 80px 0;
+}
+
+.projects__dot {
+  color: #c084fc;
+}
+
+.projects__grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(520px, 1fr));
+  gap: 32px;
+}
+
+.projects__card {
+  position: relative;
+  display: block;
+  border-radius: 14px;
+  overflow: hidden;
+  text-decoration: none;
+  isolation: isolate;
+}
+
+.projects__card-glow {
+  position: absolute;
+  inset: -60%;
+  z-index: 0;
+  background: conic-gradient(
+    from 0deg,
+    transparent 0%,
+    #a855f7 8%,
+    #f0abfc 12%,
+    transparent 20%
+  );
+  animation: rotate-glow 4s linear infinite;
+}
+
+@keyframes rotate-glow {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.projects__card-inner {
+  position: relative;
+  z-index: 1;
+  margin: 2px;
+  height: calc(100% - 4px);
+  display: flex;
+  flex-direction: column;
+  background-color: #111827;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.projects__card:hover .projects__card-glow {
+  animation-duration: 1.8s;
+}
+
+.projects__image {
+ width:100%;
+  object-fit:cover;
+  background: linear-gradient(160deg, #c084fc 0%, #7c3aed 100%);
+}
+
+.projects__card-body {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 28px;
+}
+
+.projects__card-title {
+  font-size: 24px;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0;
+}
+
+.projects__card-description {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #94a3b8;
+  margin: 0;
+}
+
+.projects__card-link {
+  margin-top: 8px;
+  font-size: 16px;
+  font-weight: 700;
+  color: #c084fc;
+}

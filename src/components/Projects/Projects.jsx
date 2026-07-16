@@ -1,0 +1,75 @@
+import paletteImg from "../../assets/projects/palette.png";
+import recipeImg from "../../assets/projects/recipe.png";
+import productifyImg from "../../assets/projects/productify.png";
+import weatherImg from "../../assets/projects/weather.png";
+import "./Projects.css";
+
+const projectsList = [
+  {
+    title: "Color Palette Generator",
+    image: paletteImg,
+    description: "A web application that generates beautiful random color palettes with one-click copy functionality. Built with JavaScript and focused on a clean, responsive user interface.",
+    link: "https://github.com/Jana-Abram/Color-Palette-Generator",
+  },
+  {
+    title: "Recipe Finder",
+    image: recipeImg,
+    description: "A responsive recipe finder that helps users search for meals, view detailed recipes and discover new dishes using a public API.",
+    link: "https://github.com/Jana-Abram/Reciepe-finder",
+  },
+  {
+    title: "Productify",
+    image: productifyImg,
+    description: "A full-stack product management application where users can create, edit and manage products, upload images and interact through comments. Built with React, Node.js and PostgreSQL.",
+    link: "https://github.com/Jana-Abram/productify",
+  },
+  {
+    title: "Weather App",
+    image: weatherImg,
+    description: "A weather application that provides real-time forecasts for cities worldwide using a public weather API. Built with React and focused on a clean, responsive user experience.",
+    link: "https://github.com/Jana-Abram/Weather-app",
+  },
+];
+
+function Projects() {
+  return (
+    <section className="projects" id="projects">
+      <div className="projects__inner">
+        <h2 className="projects__title">
+          Projects<span className="projects__dot">.</span>
+        </h2>
+
+        <div className="projects__grid">
+          {projectsList.map((project) => (
+            <a
+              href={project.link}
+              target="_blank"
+              rel="noreferrer"
+              className="projects__card"
+              key={project.title}
+            >
+              <span className="projects__card-glow" />
+
+              <div className="projects__card-inner">
+                <img
+                src={project.image}
+                alt={project.title}
+                className="projects__image"
+              />
+                <div className="projects__card-body">
+                  <h3 className="projects__card-title">{project.title}</h3>
+                  <p className="projects__card-description">
+                    {project.description}
+                  </p>
+                  <span className="projects__card-link">View project ↗</span>
+                </div>
+              </div>
+            </a>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+export default Projects;
