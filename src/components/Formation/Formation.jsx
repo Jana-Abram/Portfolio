@@ -1,3 +1,4 @@
+import aiIcon from "../../assets/icons/ai.svg";
 import "./Formation.css";
 
 const goals = [
@@ -23,11 +24,11 @@ const goals = [
       "Exploring server-side rendering and routing to build faster, more scalable React applications.",
   },
   {
-    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg",
-    title: "Accessibility & Responsive Design",
-    status: "Next up",
-    description:
-      "Deepening my knowledge of semantic HTML, ARIA and responsive layouts to build interfaces that work well for everyone.",
+  icon: aiIcon,
+  title: "AI Tools for Development",
+  status: "Learning now",
+  description:
+  "Exploring AI-powered development tools like ChatGPT, Claude and Cursor to write cleaner code, debug faster and improve my workflow."
   },
 ];
 
