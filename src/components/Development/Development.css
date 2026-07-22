@@ -119,3 +119,32 @@
   margin: 0;
   text-align: left;
 }
+
+@media (max-width: 768px) {
+  .experience__title {
+    font-size: 36px;
+  }
+
+  .experience__item {
+    grid-template-columns: 1fr;
+    gap: 12px;
+    padding-left: 40px;
+  }
+
+  .experience__list::before {
+    left: 9px;
+  }
+
+  .experience__marker {
+    left: 1px;
+  }
+
+  .experience__stack {
+    flex-direction: row;
+    padding-top: 0;
+  }
+
+  .experience__item-title {
+    font-size: 24px;
+  }
+}

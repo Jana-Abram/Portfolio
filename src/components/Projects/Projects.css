@@ -104,3 +104,13 @@
   font-weight: 700;
   color: #c084fc;
 }
+
+@media (max-width: 768px) {
+  .projects__title {
+    font-size: 36px;
+  }
+
+  .projects__grid {
+    grid-template-columns: 1fr;
+  }
+}
