@@ -112,3 +112,13 @@
   color: #94a3b8;
   margin: 0;
 }
+
+@media (max-width: 768px) {
+  .formation__title {
+    font-size: 36px;
+  }
+
+  .formation__grid {
+    grid-template-columns: 1fr;
+  }
+}

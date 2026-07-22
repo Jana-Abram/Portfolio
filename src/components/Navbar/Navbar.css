@@ -38,3 +38,21 @@
   color: #ffffff;
   border-bottom-color:  #c084fc;
 }
+
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    gap: 20px;
+    padding: 24px 20px;
+  }
+
+  .navbar__menu {
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .navbar__link {
+    font-size: 15px;
+  }
+}
