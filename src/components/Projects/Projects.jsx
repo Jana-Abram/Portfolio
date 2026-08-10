@@ -1,10 +1,16 @@
 import paletteImg from "../../assets/projects/palette.png";
 import recipeImg from "../../assets/projects/recipe.png";
-import productifyImg from "../../assets/projects/productify.png";
-import weatherImg from "../../assets/projects/weather.png";
+import groomingImg from "../../assets/projects/grooming.png";
+import floraImg from "../../assets/projects/flora.png";
 import "./Projects.css";
 
 const projectsList = [
+  {
+    title: "Flora-landing",
+    image: floraImg,
+    description: "A flower shop landing page with a beautiful gallery and an about us section — clean, elegant, and image-focused.",
+    link: "https://github.com/Jana-Abram/flora-landing",
+  },
   {
     title: "Color Palette Generator",
     image: paletteImg,
@@ -18,16 +24,10 @@ const projectsList = [
     link: "https://github.com/Jana-Abram/Reciepe-finder",
   },
   {
-    title: "Productify",
-    image: productifyImg,
-    description: "A full-stack product management application where users can create, edit and manage products, upload images and interact through comments. Built with React, Node.js and PostgreSQL.",
-    link: "https://github.com/Jana-Abram/productify",
-  },
-  {
-    title: "Weather App",
-    image: weatherImg,
-    description: "A weather application that provides real-time forecasts for cities worldwide using a public weather API. Built with React and focused on a clean, responsive user experience.",
-    link: "https://github.com/Jana-Abram/Weather-app",
+    title: "Grooming-salon",
+    image: groomingImg,
+    description: "Built a pet grooming salon website with services, pricing, a product catalog and a before & after gallery. Focused on a clean, easy-to-navigate layout.",
+    link: "https://github.com/Jana-Abram/grooming-salon",
   },
 ];
 
