@@ -1,11 +1,54 @@
 .projects {
+  position: relative;
   background-color: #0a0e17;
-  padding: 100px 40px;
+  padding: 80px 40px;
+  border-top: 1px solid #1e293b;
+  border-bottom: 1px solid #1e293b;
+  overflow: hidden;
 }
 
 .projects__inner {
+  position: relative;
   max-width: 1200px;
   margin: 0 auto;
+}
+
+/* размытые фоновые пятна */
+.projects__blobs {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.projects__blob {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(90px);
+  opacity: 0.35;
+}
+
+.projects__blob--one {
+  width: 380px;
+  height: 380px;
+  top: -40px;
+  left: -80px;
+  background: radial-gradient(circle, #a855f7, transparent 70%);
+}
+
+.projects__blob--two {
+  width: 420px;
+  height: 420px;
+  bottom: -80px;
+  right: -100px;
+  background: radial-gradient(circle, #7c3aed, transparent 70%);
+}
+
+.projects__title,
+.projects__carousel,
+.projects__dots {
+  position: relative;
+  z-index: 1;
 }
 
 .projects__title {
@@ -20,19 +63,52 @@
   color: #c084fc;
 }
 
-.projects__grid {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(520px, 1fr));
-  gap: 32px;
+/* карусель: стрелки по бокам + сцена по центру */
+.projects__carousel {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+}
+
+.projects__stage {
+  position: relative;
+  width: 480px;
+  height: 520px;
 }
 
 .projects__card {
-  position: relative;
-  display: block;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 420px;
   border-radius: 14px;
   overflow: hidden;
   text-decoration: none;
   isolation: isolate;
+
+  /* позиция и вид зависят от --offset (расстояние от активной карточки) */
+  --abs-offset: max(var(--offset), calc(var(--offset) * -1));
+  transform: translateX(calc(-50% + var(--offset) * 130px))
+    scale(calc(1 - var(--abs-offset) * 0.15));
+  opacity: calc(1 - var(--abs-offset) * 0.4);
+  z-index: calc(10 - var(--abs-offset));
+  filter: blur(calc(var(--abs-offset) * 1.5px));
+  pointer-events: auto;
+  transition: transform 0.4s ease, opacity 0.4s ease, filter 0.4s ease;
+  cursor: pointer;
+}
+
+/* карточки дальше 2 позиций от активной — прячем совсем */
+.projects__card[style*="--offset: -3"],
+.projects__card[style*="--offset: 3"] {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.projects__card--active {
+  z-index: 10;
+  cursor: default;
 }
 
 .projects__card-glow {
@@ -67,13 +143,14 @@
   overflow: hidden;
 }
 
-.projects__card:hover .projects__card-glow {
+.projects__card--active:hover .projects__card-glow {
   animation-duration: 1.8s;
 }
 
 .projects__image {
- width:100%;
-  object-fit:cover;
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
   background: linear-gradient(160deg, #c084fc 0%, #7c3aed 100%);
 }
 
@@ -105,12 +182,71 @@
   color: #c084fc;
 }
 
+/* стрелки навигации */
+.projects__nav {
+  flex-shrink: 0;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border: 1px solid rgba(168, 85, 247, 0.4);
+  background: rgba(168, 85, 247, 0.08);
+  color: #c084fc;
+  font-size: 28px;
+  line-height: 1;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.projects__nav:hover {
+  background: rgba(168, 85, 247, 0.2);
+  transform: scale(1.08);
+}
+
+/* точки-индикаторы под каруселью */
+.projects__dots {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 40px;
+}
+
+.projects__dot-btn {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  border: none;
+  background: #334155;
+  cursor: pointer;
+  padding: 0;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.projects__dot-btn--active {
+  background: #a855f7;
+  transform: scale(1.3);
+}
+
 @media (max-width: 768px) {
   .projects__title {
     font-size: 36px;
   }
 
-  .projects__grid {
-    grid-template-columns: 1fr;
+  .projects__stage {
+    width: 300px;
+    height: 480px;
+  }
+
+  .projects__card {
+    width: 280px;
+  }
+
+  .projects__card {
+    --offset-spacing: 70px;
+  }
+
+  .projects__nav {
+    width: 36px;
+    height: 36px;
+    font-size: 20px;
   }
 }

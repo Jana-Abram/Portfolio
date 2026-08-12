@@ -40,20 +40,6 @@
   isolation: isolate;
 }
 
-.formation__card-glow {
-  position: absolute;
-  inset: -60%;
-  z-index: 0;
-  background: conic-gradient(
-    from 0deg,
-    transparent 0%,
-    #a855f7 8%,
-    #f0abfc 12%,
-    transparent 20%
-  );
-  animation: formation-rotate 5s linear infinite;
-}
-
 @keyframes formation-rotate {
   to {
     transform: rotate(360deg);
