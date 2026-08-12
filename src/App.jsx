@@ -15,8 +15,8 @@ function App() {
       <Hero />
       <Marquee />
       <Development />
-      <Formation />
       <Projects />
+      <Formation />
       <Contacts />
     </div>
   );

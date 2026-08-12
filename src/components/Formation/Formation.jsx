@@ -46,7 +46,6 @@ function Formation() {
         <div className="formation__grid">
           {goals.map((goal) => (
             <div className="formation__card" key={goal.title}>
-              <span className="formation__card-glow" />
 
               <div className="formation__card-inner">
                 <div className="formation__card-top">
